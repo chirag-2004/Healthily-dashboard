@@ -1,6 +1,3 @@
-// File: app/Room/[roomId]/page.js
-
-// Adjust path if your _components folder is elsewhere
 import RoomPageClient from "../_components/RoomPageClient";
 
 const Page = async ({ params }) => {
