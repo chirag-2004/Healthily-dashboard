@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-200 to-primary">
       <div className="max-w-lg bg-white shadow-lg rounded-lg p-20 text-center">
         <h1 className="text-4xl font-bold text-primary mb-4">
-          Welcome to MGood Dashboard
+          Welcome to Healthily Dashboard
         </h1>
         <p className="text-gray-700 mb-6">
           For Doctors. Please{" "}

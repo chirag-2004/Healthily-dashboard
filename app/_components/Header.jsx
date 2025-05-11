@@ -38,7 +38,7 @@ function Header() {
           height={80}
           alt="logo"
         />
-        <span className="text-lg font-medium font-display">MGood</span>
+        <span className="text-lg font-medium font-display">Healthily</span>
       </a>
       <ul className="hidden md:flex gap-12 font-body font-medium">
         {navLinks.map((item, index) => (
@@ -97,7 +97,7 @@ function Header() {
                 height={80}
                 alt="logo"
               />
-              <span className="text-lg font-medium font-display">MGood</span>
+              <span className="text-lg font-medium font-display">Healthily</span>
             </a>
             <button className="p-2" onClick={handleMenu}>
               <i className="fa-solid fa-xmark text-gray-500"></i>

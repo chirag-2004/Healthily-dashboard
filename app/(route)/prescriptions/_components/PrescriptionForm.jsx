@@ -37,7 +37,7 @@ function PrescriptionForm() {
     formData.append("file", file,`prescription_${prescriptionData.patientName}_${prescriptionData.date}.pdf`);
     formData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_PRESET); // Replace with your upload preset from Cloudinary
     formData.append("cloud_name", process.env.NEXT_CLOUDINARY_CLOUD_NAME); // Replace with your Cloudinary cloud name
-    formData.append("folder", "mgood-prescriptions");
+    formData.append("folder", "healthily");
     try {
       const response = await axios.post(
         process.env.NEXT_PUBLIC_CLOUDINARY_URL, // Replace with your Cloudinary cloud name
@@ -81,7 +81,7 @@ const savePrescription = async (prescriptionUrl, name) => {
         <!-- First Page: Prescription -->
         <div style="padding: 10px; max-width: 800px; margin: 0 auto; page-break-after: always;">
           <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
-            <img src="/mgood_logo.jpg" alt="Logo" style="width: 150px; height: auto; margin-right: 20px;"/>
+            <img src="/mgood_logo.png" alt="Logo" style="width: 150px; height: auto; margin-right: 20px;"/>
             
             <div style="text-align: center; flex-grow: 1;">
               <h2 style="color: #000; margin: 0; padding: 0;">Medical Prescription</h2>
@@ -123,7 +123,7 @@ const savePrescription = async (prescriptionUrl, name) => {
           <div style="margin-top: 40px; padding: 15px; background-color: #f8f8f8; border: 1px solid #ddd; font-size: 12px;">
             <h4 style="color: #000; margin: 0 0 10px 0; text-decoration: underline;">Important Disclaimers:</h4>
             <ol style="color: #444; margin: 0; padding-left: 20px;">
-              <li style="margin-bottom: 5px;">MGood is a facilitator between doctors and patients, and is not responsible for the quality of care or treatment provided by the doctor.</li>
+              <li style="margin-bottom: 5px;">Healthily is a facilitator between doctors and patients, and is not responsible for the quality of care or treatment provided by the doctor.</li>
               <li style="margin-bottom: 5px;">This prescription is for informational purposes only, and patients are advised to seek a second opinion or consult with their primary care physician before starting any new treatment.</li>
               <li style="margin-bottom: 5px;">In case of an emergency, please call emergency services or visit the nearest hospital.</li>
             </ol>
@@ -131,9 +131,9 @@ const savePrescription = async (prescriptionUrl, name) => {
 
           <div style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #ddd;">
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #666;">
-              <span>Info@mgood.org</span>
-              <span>www.mgood.org</span>
-              <span>Any issues : +918923894358</span>
+              <span>Info@healthily.org</span>
+              <span>www.healthily.com</span>
+              <span>Any issues : +917017998087</span>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ const savePrescription = async (prescriptionUrl, name) => {
         <!-- Second Page: Invoice -->
         <div style="padding: 10px; max-width: 800px; margin: 0 auto;">
           <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
-            <img src="/mgood_logo.jpg" alt="Logo" style="width: 150px; height: auto;"/>
+            <img src="/mgood_logo.png" alt="Logo" style="width: 150px; height: auto;"/>
             <div style="text-align: right;">
               <h2 style="color: #000; margin: 0; padding: 0;">INVOICE</h2>
               <p style="color: #000; margin: 5px 0;">Date: ${prescriptionData.date}</p>
@@ -189,7 +189,7 @@ const savePrescription = async (prescriptionUrl, name) => {
           <div style="margin-bottom: 20px;">
             <p style="color: #000; margin: 5px 0;"><strong>Payment Status:</strong> Paid</p>
             <p style="color: #000; margin: 5px 0;"><strong>Payment Method:</strong> Online Payment</p>
-            <p style="color: #000; margin: 5px 0;"><strong>Payment received to MGood via online method</strong></p>
+            <p style="color: #000; margin: 5px 0;"><strong>Payment received to healthily via online method</strong></p>
           </div>
 
           <div style="font-size: 12px; color: #666; margin-top: 40px;">
@@ -202,11 +202,11 @@ const savePrescription = async (prescriptionUrl, name) => {
           </div>
 
           <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; font-size: 12px; color: #666;">
-            <p style="margin: 0;">Thank you for choosing MGood!</p>
+            <p style="margin: 0;">Thank you for choosing healthily!</p>
             <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-              <span>Info@mgood.org</span>
-              <span>www.mgood.org</span>
-              <span>Any issues : +918923894358</span>
+              <span>Info@healthily.org</span>
+              <span>www.healtily.org</span>
+              <span>Any issues : +917017998087</span>
             </div>
           </div>
         </div>

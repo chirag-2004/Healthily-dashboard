@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "MGood Dashboard",
-  description: "Mgood For Doctors and Admin",
+  title: "Healthily Dashboard",
+  description: "Healthily For Doctors and Admin",
 };
 
 export default function RootLayout({ children }) {
