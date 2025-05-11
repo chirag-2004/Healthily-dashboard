@@ -1,11 +1,9 @@
-// File: app/_components/RoomPage.jsx
-
 "use client";
 
 import React, { useEffect, useRef } from "react";
 import { useRouter } from 'next/navigation';
 
-const RoomPage = ({ roomId: propRoomId, userRole }) => { // Accept userRole
+const RoomPage = ({ roomId: propRoomId, userRole }) => { 
   const router = useRouter();
   const meetingRef = useRef(null);
 
@@ -28,29 +26,27 @@ const RoomPage = ({ roomId: propRoomId, userRole }) => { // Accept userRole
         if (!appID || !serverSecret) {
           console.error("ZegoCloud App ID or Server Secret is missing.");
           alert("Video service configuration error. Please contact support.");
-          router.push(userRole === 'doctor' ? "/dashboard" : "/"); // Redirect based on role
+          router.push(userRole === 'doctor' ? "/dashboard" : "/"); 
           return;
         }
 
         const userID = Date.now().toString() + Math.floor(Math.random() * 10000);
         
-        // Determine User Name based on role
-        let userName = "MGood User " + userID.slice(-4); // Default
+       
+        let userName = " User " + userID.slice(-4); 
         if (userRole === 'doctor') {
-          userName = "Doctor " + userID.slice(-4); // Or use actual doctor name if available
-        } else if (userRole === 'patient') { // Assuming patient side might also pass a role
-          userName = "Patient " + userID.slice(-4); // Or use actual patient name
+          userName = "Doctor " + userID.slice(-4); 
+        } else if (userRole === 'patient') { 
+          userName = "Patient " + userID.slice(-4); 
         }
-        // If you have the actual doctor's name (e.g., from an auth context when they are on the dashboard),
-        // you would ideally pass that name to this component and use it.
-        // For now, "Doctor" + random suffix is a placeholder.
+        
 
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
           appID,
           serverSecret,
           propRoomId.toString(),
           userID,
-          userName // Use the role-based userName
+          userName 
         );
 
         zpInstance = ZegoUIKitPrebuilt.create(kitToken);
@@ -64,11 +60,11 @@ const RoomPage = ({ roomId: propRoomId, userRole }) => { // Accept userRole
           showLeavingView: true,
           onLeaveRoom: () => {
             console.log("Left ZegoCloud room. Redirecting...");
-            // Redirect doctors to dashboard, patients to home or another page
+            
             if (userRole === 'doctor') {
-              router.push("/dashboard"); // Path to your doctor/admin dashboard
+              router.push("/dashboard"); 
             } else {
-              router.push("/"); // Or /book-tc or a "thank you" page for patients
+              router.push("/"); 
             }
           },
           sharedLinks: [
@@ -77,8 +73,7 @@ const RoomPage = ({ roomId: propRoomId, userRole }) => { // Accept userRole
               url: window.location.href,
             },
           ],
-          // You can customize more Zego UI features here
-          // e.g., turn off chat for doctors if not needed, or customize layout
+         
         });
       } catch (error) {
         console.error("Failed to initialize ZegoCloud meeting:", error);
@@ -92,11 +87,11 @@ const RoomPage = ({ roomId: propRoomId, userRole }) => { // Accept userRole
     return () => {
       if (zpInstance) {
         console.log("RoomPage: Cleaning up Zego instance.");
-        // zpInstance.destroy(); // Check Zego docs for proper cleanup if needed beyond leaving room
+       
       }
     };
 
-  }, [propRoomId, userRole, router]); // Added userRole to dependencies
+  }, [propRoomId, userRole, router]); 
 
   if (!propRoomId) {
     return (
