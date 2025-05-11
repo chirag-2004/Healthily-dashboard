@@ -498,9 +498,9 @@ const AddDoctor = () => {
               className="bg-primary text-white px-6 py-2 rounded-lg"
               onClick={() => {
                 if (directToSpecialization) {
-                  window.location.href = `http://localhost:3001/search/${directToSpecialization}`;
+                  window.location.href = `https://healthily-user.vercel.app/search/${directToSpecialization}`;
                 } else {
-                  window.location.href = `http://localhost:3001`;
+                  window.location.href = `https://healthily-dashboard.onrender.com/dashboard`;
                 }
                 setIsDialogOpen(false);
               }}
