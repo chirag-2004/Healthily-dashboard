@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-// Kinde related imports removed
+
 import {
   Popover,
   PopoverContent,
@@ -26,7 +26,7 @@ function Header() {
   const handleMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
-  // const { user } = useKindeBrowserClient(); // Kinde hook removed
+  
 
   return (
     <nav className="p-3 flex justify-between bg-white items-center shadow-sm text-black">
@@ -62,15 +62,14 @@ function Header() {
           </PopoverTrigger>
           <PopoverContent className="w-44">
             <ul className="flex flex-col font-display">
-              {/* You can add a generic profile link or name here if needed */}
-              {/* <li className="hover:bg-slate-300 p-2 rounded-md">Profile</li> */}
-              <Link href="/appointment-history"> {/* Update path as needed */}
+             
+              <Link href="/appointment-history"> 
                 <li className="cursor-pointer hover:bg-slate-300 p-2 rounded-md">
                   Appointment History
                 </li>
               </Link>
               <li className="cursor-pointer hover:bg-slate-300 p-2 rounded-md">
-                {/* Implement your custom logout logic here if needed */}
+                
                 Log Out
               </li>
             </ul>
@@ -108,19 +107,19 @@ function Header() {
               <Link href={item.path} key={item.id}>
                 <li
                   className="hover:text-primary cursor-pointer"
-                  onClick={handleMenu} // Close menu on item click
+                  onClick={handleMenu} 
                 >
                   {item.name}
                 </li>
               </Link>
             ))}
-             {/* Optionally, add profile popover items to mobile menu as well */}
-            <Link href="/appointment-history"> {/* Update path as needed */}
+             \
+            <Link href="/appointment-history">
                 <li className="hover:text-primary cursor-pointer" onClick={handleMenu}>
                   Appointment History
                 </li>
             </Link>
-            <li className="hover:text-primary cursor-pointer" onClick={() => { /* Implement custom logout */ handleMenu(); }}>
+            <li className="hover:text-primary cursor-pointer" onClick={() => {  handleMenu(); }}>
                 Log Out
             </li>
           </ul>
